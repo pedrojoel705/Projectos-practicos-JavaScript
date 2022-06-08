@@ -121,10 +121,10 @@ img {
 }
 
 .menu a {
-    padding: 2rem;
+    padding: 1.2rem;
     width: inherit;
     display: block;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     text-decoration: none;
     color: var(--main-color);
     transition: all 0.3s ease;
