@@ -6,6 +6,8 @@ import scrollTopBotton from './js/btn_scroll.js';
 import darkTheme from './js/btn_themeDark.js';
 import responsiveMedia from './js/objeto_responsive.js';
 import responsiveTester from './js/prueba_responsive.js';
+import userDeviceInfo from './js/deteccion_dispositivos.js';
+import networkStatus from './js/deteccion_red.js';
 
 const d = document;
 
@@ -34,6 +36,7 @@ d.addEventListener('DOMContentLoaded', (e) => {
     );
 
     responsiveTester('resposive-tester');
+    userDeviceInfo('user-device');
 });
 
 d.addEventListener('keydown', (e) => {
@@ -42,3 +45,4 @@ d.addEventListener('keydown', (e) => {
 });
 
 darkTheme('.dark-theme-btn', 'dark-mode');
+networkStatus();
