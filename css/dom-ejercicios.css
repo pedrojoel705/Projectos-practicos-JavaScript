@@ -76,6 +76,7 @@ img {
     background-color: var(--second-modal-color);
     opacity: 0;
     visibility: hidden;
+    overflow-y: auto;
     /*para salir de arriba*/
     transition: transform 0.3s ease, opacity 0.3s ease;
     /*transform: translate(0,-100%);
@@ -121,10 +122,10 @@ img {
 }
 
 .menu a {
-    padding: 1.2rem;
+    padding: 1.5rem;
     width: inherit;
     display: block;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     text-decoration: none;
     color: var(--main-color);
     transition: all 0.3s ease;
