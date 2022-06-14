@@ -1,3 +1,9 @@
+/**
+ * When the user types in the input, if the text in the selector matches the input, remove the filter
+ * class, otherwise add the filter class.
+ * @param input - The input field that will be used to filter the list.
+ * @param selector - The selector of the elements you want to filter.
+ */
 const d = document;
 
 export default function searchFilters(input, selector) {

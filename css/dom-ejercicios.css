@@ -43,6 +43,7 @@ img {
 .header {
     /*psition: sticky permite que la barra de la cabecera de mantenga fija mienta de sube o se baja la pagina*/
     position: sticky;
+    z-index: 997;
     top: 0%;
     padding: 1rem;
     background-color: var(--main-color);
@@ -276,4 +277,118 @@ img {
     visibility: hidden;
     opacity: 0;
     order: 1;
+}
+
+
+/*********************************Responsive Slider*******************************/
+
+.slider {
+    position: relative;
+    border: thin solid black;
+    width: 80%;
+    margin: 1rem auto;
+    text-align: center;
+}
+
+.slider-slides {
+    position: relative;
+    height: 400px;
+}
+
+.slider-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease;
+}
+
+.slider-slide img {
+    height: inherit;
+    width: inherit;
+    object-fit: cover;
+    object-position: 50% 10%;
+}
+
+.slider-slide.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.slider-btns {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.slider a {
+    display: block;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    border: thin solid black;
+    text-decoration: none;
+    background-color: aliceblue;
+    color: #222;
+    transition: all 0.3s ease;
+}
+
+.slider a:hover {
+    color: #4d4d4d;
+}
+
+
+/******************************ScrolSpy*********************************************/
+
+@media screen and (min-width: 1024px) {
+    body {
+        display: grid;
+        grid-template-columns: 80% 20%;
+        grid-template-rows: 4rem auto;
+        grid-template-areas: 'header header' 'main   panel';
+    }
+    main {
+        grid-area: main;
+    }
+    header {
+        grid-area: header;
+    }
+    .panel {
+        grid-area: panel;
+        align-self: start;
+        position: sticky;
+        top: 4rem;
+        justify-content: flex-start;
+        background-color: var(--second-color);
+        transform: translate(0, 0);
+        opacity: 1;
+        visibility: visible;
+    }
+    .panel-btn {
+        display: none;
+    }
+    .menu {
+        justify-content: start;
+        text-align: right;
+    }
+    .menu a {
+        font-size: 1rem;
+        padding: 0.75rem;
+    }
+    .menu a:hover,
+    .menu a.active {
+        color: var(--second-color);
+        background-color: var(--main-color);
+    }
+    .scroll-top-btn {
+        right: initial;
+        left: calc(4.25rem + 1vw);
+    }
 }
