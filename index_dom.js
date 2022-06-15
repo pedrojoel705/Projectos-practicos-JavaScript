@@ -14,6 +14,7 @@ import searchFilters from './js/filtro_busquedas.js';
 import draw from './js/sorteo.js';
 import slider from './js/carrusel.js';
 import scrollSpy from './js/scroll_spy.js';
+import smartVideo from './js/video_inteligente.js';
 
 const d = document;
 
@@ -47,6 +48,7 @@ d.addEventListener('DOMContentLoaded', (e) => {
     draw('#winner-btn', '.player');
     slider();
     scrollSpy();
+    smartVideo();
 });
 
 d.addEventListener('keydown', (e) => {

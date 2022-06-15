@@ -43,7 +43,7 @@ img {
 .header {
     /*psition: sticky permite que la barra de la cabecera de mantenga fija mienta de sube o se baja la pagina*/
     position: sticky;
-    z-index: 997;
+    z-index: 1000;
     top: 0%;
     padding: 1rem;
     background-color: var(--main-color);
@@ -359,6 +359,7 @@ img {
     }
     header {
         grid-area: header;
+        z-index: 999;
     }
     .panel {
         grid-area: panel;
@@ -392,3 +393,24 @@ img {
         left: calc(4.25rem + 1vw);
     }
 }
+
+
+/********************************Formulario de Registro************************************/
+
+
+/* .form-registros {
+    width: 80%;
+    margin-left: 10%;
+    padding: 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-registro {
+    margin-top: 15px;
+}
+
+.comentarios {
+    padding: 250px;
+} */
