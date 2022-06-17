@@ -8,6 +8,7 @@
     <title>Ejercicios del DOM</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/1.2.1/hamburgers.min.css" />
     <link rel="stylesheet" href="css\dom-ejercicios.css" />
+    <script src="index_dom.js" type="module "></script>
 </head>
 
 <body data-dark>
@@ -35,7 +36,7 @@
             <a href="#seccion11" data-scroll-spy>Sorteo Digital</a>
             <a href="#seccion12" data-scroll-spy>Responsive Slider</a>
             <a href="#seccion13" data-scroll-spy>Video Inteligente</a>
-            <a href="#seccion14" data-scroll-spy>Seccion 14</a>
+            <a href="#seccion14" data-scroll-spy>Validacion de formularios</a>
             <a href="#seccion15" data-scroll-spy>Seccion 15</a>
             <a href="#seccion16" data-scroll-spy>Seccion 16</a>
             <a href="#seccion17" data-scroll-spy>Seccion 17</a>
@@ -196,13 +197,21 @@
                 <video src="assets/LP  Lost On You Live.mp4" muted controls loop data-smart-video></video>
             </section>
             <section id="seccion14" class="section" data-scroll-spy>
-                <h2>Formulario de Registro</h2>
-                <div class="form-registros">
-                    <input type="text" name="text" id="" class="form-registro" placeholder="Escribe tu Nombre Completo">
-                    <input type="email" name="email" id="" class="form-registro" placeholder=" Escribe tu Email ">
-                    <input type="text " name="text " id="" class="form-registro" placeholder="Asusnto a Tratar">
-                    <input type="text" name="text" id="" class="form-registro cometarios" placeholder=" Escribe tus Comentarios ">
-                </div>
+                <h2>Validacion de formularios</h2>
+                <form class="contact-form" action="https://formsubmit.co/yurelvy@gmail.com" method="POST" target="_blank">
+                    <legend>Envianos tus Comentarios</legend>
+                    <input type="text" name="name" placeholder="Escribe tu Nombre" title="Nombre solo acepta letras y espacios en blanco" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" required>
+                    <input type="email" name="email" placeholder="Escribe tu Email" title="Email Incorrecto" pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" required>
+                    <input type="text" name="subject" placeholder="Asunto a tratar" title="El Asunto es Requerido" required>
+                    <textarea name="comments" cols="50" rows="5" placeholder="Escribes tus comentarios" data-pattern="^.{1,255}$" title="Tu comentario no debe exceder los 255 caracteres" required></textarea>
+                    <input type="submit" value="Enviar">
+                    <div class="contact-form-loader none">
+                        <img src="assets/rin.svg" alt="Cargando">
+                    </div>
+                    <div class="contact-form-response none">
+                        <p>Los Datos han Sido Enviados con Exito</p>
+                    </div>
+                </form>                
             </section>
             <section id="seccion16 " class="section " data-scroll-spy>
                 <h2>Seccion 16</h2>
@@ -216,8 +225,6 @@
             </main>
             <buttom class="scroll-top-btn hidden ">&#11014;</buttom>
             <button class="dark-theme-btn ">🌙</button>
-            <script src="index_dom.js " type="module "></script>
-
-
+            <script src="index_dom.js" type="module" defer></script>
 
 </html>

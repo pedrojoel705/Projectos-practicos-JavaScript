@@ -1,3 +1,4 @@
+const d = document;
 /**
  * It takes all the sections with the attribute data-scroll-spy and adds an IntersectionObserver to
  * each one.
@@ -18,31 +19,28 @@
  * element is 250px above the viewport.
  */
 export default function scrollSpy() {
-    const $sections = document.querySelectorAll('section[data-scroll-spy]');
+  const $sections = document.querySelectorAll('section[data-scroll-spy]');
 
-    const cb = (entries) => {
-        //console.log('entries', entries);
-        entries.forEach((entry) => {
-            //console.log('entry', entry);
-            const id = entry.target.getAttribute('id');
-            console.log(id);
-            if (entry.isIntersecting) {
-                document
-                    .querySelector(`a[data-scroll-spy][href="#${id}"]`)
-                    .classList.add('active');
-            } else {
-                document
-                    .querySelector(`a[data-scroll-spy][href="#${id}"]`)
-                    .classList.remove('active');
-            }
-        });
-    };
-
-    const observe = new IntersectionObserver(cb, {
-        //root
-        //rootMargin: '-250px',
-        threshold: [0.5, 0.75],
+  const cb = (entries) => {
+    entries.forEach((entry) => {
+      const id = entry.target.getAttribute('id');
+      if (entry.isIntersecting) {
+        d.querySelector(`a[data-scroll-spy][href="#${id}"]`).classList.add(
+          'active'
+        );
+      } else {
+        d.querySelector(`a[data-scroll-spy][href="#${id}"]`).classList.remove(
+          'active'
+        );
+      }
     });
+  };
 
-    $sections.forEach((el) => observe.observe(el));
+  const observer = new IntersectionObserver(cb, {
+    //root
+    //rootMargin: '-250px',
+    threshold: [0.5, 0.75],
+  });
+
+  $sections.forEach((el) => observer.observe(el));
 }

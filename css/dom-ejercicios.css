@@ -1,416 +1,462 @@
 /***********Rset CSS***********************/
 
 :root {
-    --main-font: sans-serif;
-    --font-size: 16px;
-    --main-color: #f7df1e;
-    --second-color: #222;
-    --main-modal-color: rgba(247, 222, 30, 0.85);
-    --second-modal-color: rgba(34, 34, 34, 0.85);
-    --container-width: 1200px;
+  --main-font: sans-serif;
+  --font-size: 16px;
+  --main-color: #f7df1e;
+  --second-color: #222;
+  --main-modal-color: rgba(247, 222, 30, 0.85);
+  --second-modal-color: rgba(34, 34, 34, 0.85);
+  --container-width: 1200px;
 }
 
 html {
-    box-sizing: border-box;
-    font-family: var(--main-font);
-    font-size: var(--font-size);
-    scroll-behavior: smooth;
+  box-sizing: border-box;
+  font-family: var(--main-font);
+  font-size: var(--font-size);
+  scroll-behavior: smooth;
 }
 
 *,
 *:before,
 *:after {
-    box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 body {
-    margin: 0;
-    /*evita que salga la barra de desplaciamiento horizontal*/
-    overflow-x: hidden;
+  margin: 0;
+  /*evita que salga la barra de desplaciamiento horizontal*/
+  overflow-x: hidden;
 }
-
 
 /* estos nos ayuda a que la imagen abarque el 100 % de la ventana*/
 
 img {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }
-
 
 /**********************Menu Hamburguersa***************************/
 
 .header {
-    /*psition: sticky permite que la barra de la cabecera de mantenga fija mienta de sube o se baja la pagina*/
-    position: sticky;
-    z-index: 1000;
-    top: 0%;
-    padding: 1rem;
-    background-color: var(--main-color);
-    color: var(--second-color);
+  /*psition: sticky permite que la barra de la cabecera de mantenga fija mienta de sube o se baja la pagina*/
+  position: sticky;
+  z-index: 1000;
+  top: 0%;
+  padding: 1rem;
+  background-color: var(--main-color);
+  color: var(--second-color);
 }
 
 .header h1 {
-    text-align: center;
-    margin: 0 auto;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .section {
-    padding: 2rem;
-    padding-top: 4rem;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    max-width: var(--container-width);
-    min-height: 100vh;
-    text-align: center;
+  padding: 2rem;
+  padding-top: 4rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: var(--container-width);
+  min-height: 100vh;
+  text-align: center;
 }
 
 .panel {
-    position: fixed;
-    z-index: 998;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    width: 100%;
-    background-color: var(--second-modal-color);
-    opacity: 0;
-    visibility: hidden;
-    overflow-y: auto;
-    /*para salir de arriba*/
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    /*transform: translate(0,-100%);
+  position: fixed;
+  z-index: 998;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--second-modal-color);
+  opacity: 0;
+  visibility: hidden;
+  overflow-y: auto;
+  /*para salir de arriba*/
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  /*transform: translate(0,-100%);
     /*para  salir de abajo  
     transform: translate(0,100%);*/
-    /*para salir de la derecha  
+  /*para salir de la derecha  
     transform: translate(100,0);
     /**para salir de la izquierda 
     transform: translate(-100%,0); */
 }
 
-
 /*creo una clase para cuando se active en el HTML haga salir el panel*/
 
 .panel.is-active {
-    /*transform: translate(0,0);*/
-    opacity: 1;
-    visibility: visible;
+  /*transform: translate(0,0);*/
+  opacity: 1;
+  visibility: visible;
 }
 
 .panel-btn {
-    position: fixed;
-    z-index: 999;
-    bottom: 1vh;
-    right: 1vh;
-    width: 4rem;
-    height: 4rem;
-    border-radius: 50%;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--main-color);
+  position: fixed;
+  z-index: 999;
+  bottom: 1vh;
+  right: 1vh;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--main-color);
 }
 
 .menu {
-    width: inherit;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    text-align: center;
+  width: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
 }
 
 .menu a {
-    padding: 1.5rem;
-    width: inherit;
-    display: block;
-    font-size: 1.5rem;
-    text-decoration: none;
-    color: var(--main-color);
-    transition: all 0.3s ease;
+  padding: 1.5rem;
+  width: inherit;
+  display: block;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: var(--main-color);
+  transition: all 0.3s ease;
 }
 
 .menu a:hover {
-    font-weight: bold;
-    color: var(--second-color);
-    background-color: var(--main-modal-color);
+  font-weight: bold;
+  color: var(--second-color);
+  background-color: var(--main-modal-color);
 }
-
 
 /***************************Evento del Teclado*****************************/
 
 .stage {
-    display: flex;
-    min-height: 50vh;
-    background-color: var(--second-color);
+  display: flex;
+  min-height: 50vh;
+  background-color: var(--second-color);
 }
 
 .ball {
-    margin: auto;
-    width: 4rem;
-    height: 4rem;
-    border-radius: 50%;
-    background-color: var(--main-color);
+  margin: auto;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background-color: var(--main-color);
 }
 
-
 /*****************************Scroll Top Bottom******************************/
-
 
 /* Creating a button that will scroll to the top of the page. */
 
 .scroll-top-btn {
-    position: fixed;
-    z-index: 999;
-    bottom: 1vh;
-    right: calc(4.25rem + 1vh);
-    /* esto me permite posicionar un elemento al lado de uno que este ya posicionado*/
-    width: 4rem;
-    height: 4rem;
-    border-radius: 50%;
-    font-size: 2rem;
-    font-weight: bold;
-    background-color: var(--main-color);
-    color: var(--second-color);
-    cursor: pointer;
-    outline: 0;
-    border: 0;
-    display: flex;
-    align-content: flex-end;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.3s ease-out;
+  position: fixed;
+  z-index: 999;
+  bottom: 1vh;
+  right: calc(4.25rem + 1vh);
+  /* esto me permite posicionar un elemento al lado de uno que este ya posicionado*/
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  font-size: 2rem;
+  font-weight: bold;
+  background-color: var(--main-color);
+  color: var(--second-color);
+  cursor: pointer;
+  outline: 0;
+  border: 0;
+  display: flex;
+  align-content: flex-end;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-out;
 }
 
 .scroll-top-btn:hover {
-    background-color: var(--second-color);
-    color: var(--main-color);
+  background-color: var(--second-color);
+  color: var(--main-color);
 }
 
 .hidden {
-    visibility: hidden;
-    opacity: 0;
+  visibility: hidden;
+  opacity: 0;
 }
-
 
 /*********************************Botton Theme Dark*****************************************************/
 
 .dark-theme-btn {
-    position: fixed;
-    z-index: 999;
-    bottom: 1vh;
-    left: 1vw;
-    width: 4rem;
-    height: 4rem;
-    border-radius: 50%;
-    font-size: 2rem;
-    font-weight: bold;
-    background-color: var(--main-color);
-    color: var(--second-color);
-    cursor: pointer;
-    outline: 0;
-    border: 0;
-    transition: all 0.3s ease-in-out;
+  position: fixed;
+  z-index: 999;
+  bottom: 1vh;
+  left: 1vw;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  font-size: 2rem;
+  font-weight: bold;
+  background-color: var(--main-color);
+  color: var(--second-color);
+  cursor: pointer;
+  outline: 0;
+  border: 0;
+  transition: all 0.3s ease-in-out;
 }
 
 .dark-theme-btn:hover {
-    background-color: var(--second-color);
-    color: var(--main-color);
+  background-color: var(--second-color);
+  color: var(--main-color);
 }
 
 .dark-mode {
-    background-color: var(--second-color);
-    color: var(--main-color);
+  background-color: var(--second-color);
+  color: var(--main-color);
 }
-
 
 /*********Network Status****************/
 
 .online,
 .offline {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    padding: 1rem;
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-align: center;
-    background-color: #1b5e20;
-    color: #fff;
-    transition: all 0.3s ease-in-out;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  background-color: #1b5e20;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
 }
 
 .offline {
-    background-color: #b71c1c;
+  background-color: #b71c1c;
 }
 
-
 /****************************************SearchFilter*************************************************/
-
 
 /* Hiding the filter div. */
 
 .cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
 .card {
-    background-color: var(--second-color);
-    color: var(--main-color);
-    transition: all 0.3s ease-out;
+  background-color: var(--second-color);
+  color: var(--main-color);
+  transition: all 0.3s ease-out;
 }
 
 .card img {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
 
 .card figcaption {
-    padding: 1rem;
+  padding: 1rem;
 }
 
 .filter {
-    /* display: none; */
-    visibility: hidden;
-    opacity: 0;
-    order: 1;
+  /* display: none; */
+  visibility: hidden;
+  opacity: 0;
+  order: 1;
 }
-
 
 /*********************************Responsive Slider*******************************/
 
 .slider {
-    position: relative;
-    border: thin solid black;
-    width: 80%;
-    margin: 1rem auto;
-    text-align: center;
+  position: relative;
+  border: thin solid black;
+  width: 80%;
+  margin: 1rem auto;
+  text-align: center;
 }
 
 .slider-slides {
-    position: relative;
-    height: 400px;
+  position: relative;
+  height: 400px;
 }
 
 .slider-slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 1s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease;
 }
 
 .slider-slide img {
-    height: inherit;
-    width: inherit;
-    object-fit: cover;
-    object-position: 50% 10%;
+  height: inherit;
+  width: inherit;
+  object-fit: cover;
+  object-position: 50% 10%;
 }
 
 .slider-slide.active {
-    opacity: 1;
-    visibility: visible;
+  opacity: 1;
+  visibility: visible;
 }
 
 .slider-btns {
-    position: absolute;
-    width: 100%;
-    top: 50%;
-    display: flex;
-    justify-content: space-between;
-    font-size: 3rem;
-    font-weight: bold;
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 3rem;
+  font-weight: bold;
 }
 
 .slider a {
-    display: block;
-    width: 4rem;
-    height: 4rem;
-    border-radius: 50%;
-    border: thin solid black;
-    text-decoration: none;
-    background-color: aliceblue;
-    color: #222;
-    transition: all 0.3s ease;
+  display: block;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  border: thin solid black;
+  text-decoration: none;
+  background-color: aliceblue;
+  color: #222;
+  transition: all 0.3s ease;
 }
 
 .slider a:hover {
-    color: #4d4d4d;
+  color: #4d4d4d;
 }
-
 
 /******************************ScrolSpy*********************************************/
 
 @media screen and (min-width: 1024px) {
-    body {
-        display: grid;
-        grid-template-columns: 80% 20%;
-        grid-template-rows: 4rem auto;
-        grid-template-areas: 'header header' 'main   panel';
-    }
-    main {
-        grid-area: main;
-    }
-    header {
-        grid-area: header;
-        z-index: 999;
-    }
-    .panel {
-        grid-area: panel;
-        align-self: start;
-        position: sticky;
-        top: 4rem;
-        justify-content: flex-start;
-        background-color: var(--second-color);
-        transform: translate(0, 0);
-        opacity: 1;
-        visibility: visible;
-    }
-    .panel-btn {
-        display: none;
-    }
-    .menu {
-        justify-content: start;
-        text-align: right;
-    }
-    .menu a {
-        font-size: 1rem;
-        padding: 0.75rem;
-    }
-    .menu a:hover,
-    .menu a.active {
-        color: var(--second-color);
-        background-color: var(--main-color);
-    }
-    .scroll-top-btn {
-        right: initial;
-        left: calc(4.25rem + 1vw);
-    }
+  body {
+    display: grid;
+    grid-template-columns: 80% 20%;
+    grid-template-rows: 4rem auto;
+    grid-template-areas: 'header header' 'main   panel';
+  }
+  main {
+    grid-area: main;
+  }
+  header {
+    grid-area: header;
+    z-index: 999;
+  }
+  .panel {
+    grid-area: panel;
+    align-self: start;
+    position: sticky;
+    top: 4rem;
+    justify-content: flex-start;
+    background-color: var(--second-color);
+    transform: translate(0, 0);
+    opacity: 1;
+    visibility: visible;
+  }
+  .panel-btn {
+    display: none;
+  }
+  .menu {
+    justify-content: start;
+    text-align: right;
+  }
+  .menu a {
+    font-size: 1rem;
+    padding: 0.75rem;
+  }
+  .menu a:hover,
+  .menu a.active {
+    color: var(--second-color);
+    background-color: var(--main-color);
+  }
+  .scroll-top-btn {
+    right: initial;
+    left: calc(4.25rem + 1vw);
+  }
 }
 
+/********************************Validacion de Formulario************************************/
 
-/********************************Formulario de Registro************************************/
-
-
-/* .form-registros {
-    width: 80%;
-    margin-left: 10%;
-    padding: 30px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
+.contact-form {
+  --form-ok-color: #4caf50;
+  --form-error-color: #f44336;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
 }
 
-.form-registro {
-    margin-top: 15px;
+.contact-form > * {
+  padding: 0.5rem;
+  margin: 1rem auto;
+  display: block;
+  width: 100%;
 }
 
-.comentarios {
-    padding: 250px;
-} */
+.contact-form textarea {
+  resize: none;
+}
+
+.contact-form legend,
+.contact-form-response {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.contact-form input,
+.contact-form textarea {
+  font-size: 1rem;
+  font-family: sans-serif;
+}
+
+.contact-form input[type='submit'] {
+  width: 50%;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.contact-form *::placeholder {
+  color: #000;
+}
+
+.contact-form [required]:valid {
+  border: thin solid var(--form-ok-color);
+}
+
+.contact-form [required]:invalid {
+  border: thin solid var(--form-error-color);
+}
+
+.contact-form-error {
+  margin-top: -1rem;
+  font-size: 80%;
+  background-color: var(--form-error-color);
+  color: #fff;
+  transition: all 800ms ease;
+}
+
+.contact-form-error.is-active {
+  display: block;
+  animation: show-message 1s 1 normal 0s ease-out both;
+}
+.none {
+  display: none;
+}
+
+@keyframes show-message {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
